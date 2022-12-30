@@ -1,0 +1,15 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: nginx-gitrepo
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  url: https://github.com/Naresh240/k8s-nginx-deploy.git
+  ignore: |
+    .git/
+    .github/
+    .spoc.yaml
+  ref:
+    branch: master
